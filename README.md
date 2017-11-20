@@ -71,7 +71,7 @@ Output: clusteringOut.txt
 2. Using all the Hadoop Cluster:
 
 Code Parameters: K = 4, PATH = hdfs:///user/dhoyoso/datasets/gutenberg-txt-es/, STOPWORDSLANGUAGE = spanish.
-r
+
 Clustering parameters: --master <resource negotiators like yarn or locals> --deploy-mode <How to deploy or execute, cluster or client>  --executor-memory <The amount of memory you would give at maximum to this process> --num-executors <number of executors>
 
 ```
