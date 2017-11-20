@@ -12,7 +12,6 @@ from pyspark.sql.functions import *
 #Los argumentos son k, path de entrada, path de salida y lenguaje.
 
 def main(argv):
-	t1 = time()
 	
 	#se instancia el contexto de spark.	
 	sc = SparkContext(appName="KMeans-Clustering-dhoyoso-dsernae")
@@ -54,11 +53,7 @@ def main(argv):
 	#se corta la ruta para dejar solo el nombre y su respectivo cluster(prediction).
 	split_col = split(results['path'], '/')
 	results = results.withColumn('docname', split_col.getItem(7))
-	df = results.select("docname", "prediction")
-
-	t2 = time()
-	
-	print('Time:', t2-t1)	
+	df = results.select("docname", "prediction")	
 	
 	#se agrupan los documentos del mismo cluster en cluster_docs_list y se guardan en el path de salida como un json.
 	grouped = df.groupBy(['prediction']).agg(collect_list("docname").alias('cluster_docs_list'))
