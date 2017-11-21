@@ -105,6 +105,9 @@ in which each prediction is a cluster and has its own cluster document list.
 
 For further usage options and other issues please read the subtmitting applications [full documentation](https://spark.apache.org/docs/2.1.1/submitting-applications.html)
 
+## Dataset
+The dataset used to test this program is located in [this github as a zip.](https://github.com/dhoyoso/ClusteringKMeans/blob/master/gutenberg-txt-es.zip) 
+
 ## Authors
 
 * **Daniel Hoyos Ospina**
